@@ -30,9 +30,9 @@ jobs:
     # set up môi trường
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
 
     # cài đặt package.json
     - name: Install Package
