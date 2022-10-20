@@ -1,6 +1,3 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
 name: Node.js CI
 
 on: # set up sự kiện mà chúng ta muốn để kích hoạt workflows
@@ -17,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x] # các version của node.js
+        node-version: [16.x] # các version của node.js
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     # các bước cần làm để hoàn tất job build
@@ -44,5 +41,5 @@ jobs:
 
     # thực hiện unit test with jest
     - name: Run tests
-      run: npm test
+      run: npm ci:test
     
