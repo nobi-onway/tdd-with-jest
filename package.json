@@ -1,0 +1,23 @@
+{
+  "name": "tdd-with-jest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nobi-onway/tdd-with-jest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nobi-onway/tdd-with-jest/issues"
+  },
+  "homepage": "https://github.com/nobi-onway/tdd-with-jest#readme",
+  "dependencies": {
+    "jest": "^29.2.1"
+  }
+}
