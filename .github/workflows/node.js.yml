@@ -41,5 +41,5 @@ jobs:
 
     # thực hiện unit test with jest
     - name: Run tests
-      run: npm ci:test
+      run: npm run ci:test
     
