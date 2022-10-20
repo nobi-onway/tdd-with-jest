@@ -36,7 +36,7 @@ jobs:
 
     # cài đặt package.json
     - name: Install Package
-      run: npm ci
+      run: npm i
 
     # chạy lệnh build nếu có
     - name: Run build
