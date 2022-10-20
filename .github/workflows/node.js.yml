@@ -4,9 +4,9 @@
 name: Node.js CI
 
 on: # set up sự kiện mà chúng ta muốn để kích hoạt workflows
-  [push]:                     # sự kiện push
+  push:                     # sự kiện push
     branches: [ "main" ]        # trên nhánh main (nếu có nhiều nhánh thì có thể thêm vô, theo dạng mảng)
-  [pull_request]:             # sự kiện pull
+  pull_request:             # sự kiện pull
     branches: [ "main" ]        # trên nhánh main (nếu có nhiều nhánh thì có thể thêm vô, theo dạng mảng)
 
 # công việc mà chúng ta muốn thực hiện 
@@ -30,9 +30,9 @@ jobs:
     # set up môi trường
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
     # cài đặt package.json
     - name: Install Package
