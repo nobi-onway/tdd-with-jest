@@ -3,29 +3,46 @@
 
 name: Node.js CI
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: # set up sự kiện mà chúng ta muốn để kích hoạt workflows
+  [push]:                     # sự kiện push
+    branches: [ "main" ]        # trên nhánh main (nếu có nhiều nhánh thì có thể thêm vô, theo dạng mảng)
+  [pull_request]:             # sự kiện pull
+    branches: [ "main" ]        # trên nhánh main (nếu có nhiều nhánh thì có thể thêm vô, theo dạng mảng)
 
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
+# công việc mà chúng ta muốn thực hiện 
+jobs: 
+  # build trên máy ảo ubuntu phiên bản mới nhất
+  standard-checks: 
+    runs-on: ubuntu-latest 
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [14.x, 16.x, 18.x] # các version của node.js
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
+    # các bước cần làm để hoàn tất job build
     steps:
-    - uses: actions/checkout@v3
+
+    # lấy tài nguyên từ local quăng lên máy ảo Github
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # set up môi trường
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+
+    # cài đặt package.json
+    - name: Install Package
+      run: npm ci
+
+    # chạy lệnh build nếu có
+    - name: Run build
+      run: npm run build --if-present
+
+    # thực hiện unit test with jest
+    - name: Run tests
+      run: npm test
+    

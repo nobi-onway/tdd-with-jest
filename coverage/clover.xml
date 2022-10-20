@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1666236015969" clover="3.2.0">
-  <project timestamp="1666236015970" name="All files">
+<coverage generated="1666238803424" clover="3.2.0">
+  <project timestamp="1666238803424" name="All files">
     <metrics statements="17" coveredstatements="16" conditionals="7" coveredconditionals="6" methods="6" coveredmethods="6" elements="30" coveredelements="28" complexity="0" loc="17" ncloc="17" packages="1" files="4" classes="4"/>
     <file name="arrayClone.js" path="C:\Users\Admin\OneDrive\Máy tính\tdd-with-jest\js\arrayClone.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>

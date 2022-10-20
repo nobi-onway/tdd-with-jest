@@ -17,7 +17,7 @@
     "url": "https://github.com/nobi-onway/tdd-with-jest/issues"
   },
   "homepage": "https://github.com/nobi-onway/tdd-with-jest#readme",
-  "dependencies": {
+  "devDependencies": {
     "jest": "^29.2.1"
   }
 }
